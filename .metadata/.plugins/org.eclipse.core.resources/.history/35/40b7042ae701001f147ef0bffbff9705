@@ -1,0 +1,10 @@
+package lesson9Stream.assignment;
+
+import java.util.stream.IntStream;
+
+public class Prob4 {
+	public static void main(String[] args) {
+	IntStream.iterate(1, x->x+1).forEach(System.out::println);
+
+
+}

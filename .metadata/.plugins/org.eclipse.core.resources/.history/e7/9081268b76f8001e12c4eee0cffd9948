@@ -1,0 +1,76 @@
+
+package librarysystem;
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class AdminDashboardWindow extends JFrame implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JButton btnAddMember;
+	
+	
+	AdminDashboardWindow() {
+		
+		setBounds(0, 0, 660, 600);
+		setTitle("Main Dashboard");
+		setLayout(null);
+		setVisible(true);
+		setBackground(Color.gray);
+		Util.centerFrameOnDesktop(this);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// Two panels
+		JPanel p1 = new JPanel();
+		p1.setBounds(0, 0, 660, 600);
+		p1.setLayout(null);
+		add(p1);
+
+		// Dashboardname
+		JLabel lblDashboard = new JLabel("Welcome to Library CheckOut System");
+		lblDashboard.setFont(new Font("SAN SERIF", Font.BOLD, 25));
+		lblDashboard.setBounds(20, 20, 600, 30);
+		p1.add(lblDashboard);
+		
+		// Buttons
+		// 1. signin
+		btnAddMember = new JButton("Add Member");
+		btnAddMember.setBounds(20, 80, 160, 30);
+		btnAddMember.setBackground(new Color(0, 184, 230));
+		btnAddMember.setForeground(Color.white);
+		btnAddMember.setFont(new Font("SAN SERIF", Font.BOLD, 20));
+		btnAddMember.setBorder(BorderFactory.createEmptyBorder());
+		btnAddMember.addActionListener(this);
+		p1.add(btnAddMember);
+		setVisible(true);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		try {
+			if (ae.getSource() == btnAddMember) {
+				String username = btnAddMember.getText();
+				String pass = btnAddMember.getText();
+
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+
+	}
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				new AdminDashboardWindow();
+
+			}
+		});
+
+	}// end of main
+
+}

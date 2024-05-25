@@ -1,0 +1,15 @@
+package lesson9Stream;
+
+import java.util.stream.IntStream;
+
+public class InstreamExample {
+	public static void main(String[] args) {
+		IntStream ins=IntStream.of(4,5,65,4,3,2);
+		IntStream gens= IntStream.generate(()->1);
+		System.out.println(gens);
+		
+		IntStream no=IntStream.iterate(1, n->n+1).limit(10);
+		no.forEach(System.out::println);
+	}
+
+}

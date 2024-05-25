@@ -1,0 +1,95 @@
+
+package librarysystem;
+
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+
+public class AdminDashboardWindow extends JFrame implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	JButton btnLoginButton;
+	JTextField txtUsername;
+	JTextField txtPassword;
+	JPasswordField passwordField; 
+
+	AdminDashboardWindow() {
+		
+		setBounds(0, 0, 660, 600);
+		setTitle("Log in");
+		setLayout(null);
+		setVisible(true);
+		setBackground(Color.gray);
+		Util.centerFrameOnDesktop(this);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// Two panels
+		JPanel p1 = new JPanel();
+		p1.setBounds(0, 0, 660, 600);
+		p1.setLayout(null);
+		add(p1);
+
+
+		
+		// username
+		JLabel lblusername = new JLabel("Username");
+		lblusername.setFont(new Font("SAN SERIF", Font.PLAIN, 20));
+		lblusername.setBounds(60, 20, 100, 25);
+		p1.add(lblusername);
+		txtUsername = new JTextField();
+		txtUsername.setBounds(60, 60, 300, 30);
+		txtUsername.setBorder(BorderFactory.createEmptyBorder());
+		p1.add(txtUsername);
+
+		// password
+
+		JLabel lblpassword = new JLabel("Password");
+		lblpassword.setFont(new Font("SAN SERIF", Font.PLAIN, 20));
+		lblpassword.setBounds(60, 110, 100, 25);
+		passwordField = new  JPasswordField(20);
+		passwordField.setBounds(60, 150, 300, 30);
+		passwordField.setBorder(BorderFactory.createEmptyBorder());
+		p1.add(passwordField);
+		p1.add(lblpassword);
+
+		// Buttons
+		// 1. signin
+		btnLoginButton = new JButton("Log in");
+		btnLoginButton.setBounds(60, 200, 130, 30);
+		btnLoginButton.setBackground(new Color(0, 184, 230));
+		btnLoginButton.setForeground(Color.white);
+		btnLoginButton.setFont(new Font("SAN SERIF", Font.PLAIN, 20));
+		btnLoginButton.setBorder(BorderFactory.createEmptyBorder());
+		btnLoginButton.addActionListener(this);
+		p1.add(btnLoginButton);
+		setVisible(true);
+
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent ae) {
+		try {
+			if (ae.getSource() == btnLoginButton) {
+				String username = txtUsername.getText();
+				String pass = txtPassword.getText();
+
+			}
+		} catch (Exception e) {
+			e.getStackTrace();
+		}
+
+	}
+
+	public static void main(String[] args) {
+		SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				new AdminDashboardWindow();
+
+			}
+		});
+
+	}// end of main
+
+}

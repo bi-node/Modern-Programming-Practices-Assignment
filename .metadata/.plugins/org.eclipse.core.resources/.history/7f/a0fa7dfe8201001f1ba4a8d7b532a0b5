@@ -1,0 +1,38 @@
+package comparableVsComparator;
+
+import java.util.*;
+
+class MyClass {
+    private int value;
+
+    public MyClass(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+}
+
+public class MyComparator {
+    public static void main(String[] args) {
+        List<MyClass> list = new ArrayList<>();
+        list.add(new MyClass(5));
+        list.add(new MyClass(3));
+        list.add(new MyClass(8));
+
+        // Using Comparator to sort by value in descending order
+        Comparator<MyClass> comparator = new Comparator<MyClass>() {
+            @Override
+            public int compare(MyClass obj1, MyClass obj2) {
+                return Integer.compare(obj2.getValue(), obj1.getValue());
+            }
+        };
+
+        Collections.sort(list, comparator);
+
+        for (MyClass obj : list) {
+            System.out.println(obj.getValue());
+        }
+    }
+}

@@ -1,0 +1,11 @@
+package lesson7.interfacestatic_clash;
+
+public interface Sup2 {
+	default int myMethod() {
+		return 1;
+	}
+	static  int uMethod()
+	{
+		return 20;
+	}
+}

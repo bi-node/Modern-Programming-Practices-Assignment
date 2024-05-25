@@ -1,0 +1,12 @@
+package lesson9Stream.assignment;
+
+public class Prob3 {
+	public static void main(String[] args) {
+		
+	}
+	public static int countWords(List<String> words, char c, char d, int len)
+	{
+		
+	}
+
+}
